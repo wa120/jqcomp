@@ -8,15 +8,10 @@ Make the directory structure
 packages/
 
 └── pkg1/
-
 │   └─── comp1/
-
 │   │   ├── main.html
-
 │   │   ├── main.js
-
 │   |   ├── model1.php
-
 │   |   └── model2.php
 
 We can use 
