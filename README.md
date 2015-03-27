@@ -7,7 +7,7 @@ http://jqcomp.org/
 
 Wei-Ta,Wang
 
-SmartAll.co , CIO
+SmartAll
 
 http://SmartAll.co/
 
