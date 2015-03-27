@@ -8,7 +8,7 @@ Make the directory structure
 packages/
 
 └── pkg1/ 
-
+ |
 │   └─── comp1/
 
 │   │   ├── main.html
