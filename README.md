@@ -9,9 +9,9 @@ Make the directory structure
      └── pkg1/
      │   └── comp1/
      │    │   ├── main.html
-     │   │   ├── main.js
-     │   |   ├── model1.php
-     │   |   └── ...
+     │    │   ├── main.js
+     │    |   ├── model1.php
+     │    |   └── ...
 
 We can use 
 
@@ -25,11 +25,9 @@ the view is pure html
 
 and the controller is closure by
 
-(function(comp){
-
-     ...
-
-})($.package.CurrentComp);
+     (function(comp){
+          ...
+     })($.package.CurrentComp);
 
 style
 
