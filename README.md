@@ -5,19 +5,6 @@ New javascript MVC
 
 Make the directory structure
 
-packages/
-
-└── pkg1/ 
-│   └─── comp1/
-
-│   │   ├── main.html
-
-│   │   ├── main.js
-
-│   |   ├── model1.php
-
-│   |   └── model2.php
-
 We can use 
 
 $.package({pkg:"pkg1",comp:"comp1"}); 
@@ -31,7 +18,9 @@ the view is pure html
 and the controller is closure by
 
 (function(comp){
+
      ...
+
 })($.package.CurrentComp);
 
 style
