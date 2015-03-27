@@ -5,6 +5,14 @@ New javascript MVC
 
 Make the directory structure
 
+     packages/
+     └── pkg1/
+     │   └── comp1/
+     │    │   ├── main.html
+     │   │   ├── main.js
+     │   |   ├── model1.php
+     │   |   └── ...
+
 We can use 
 
 $.package({pkg:"pkg1",comp:"comp1"}); 
