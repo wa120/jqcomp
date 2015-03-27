@@ -41,7 +41,7 @@ asynchronous call dynamic server page likes php,jsp,aspx etc.
 
 Model was only process CRUD(create, read, update, delete) action
 
-     http://jqcomp.org/
+http://jqcomp.org/
 
 Team
 
