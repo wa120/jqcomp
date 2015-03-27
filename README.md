@@ -19,7 +19,10 @@ We can use
 
 initialize component
 
-and asynchronous get view main.html and controller main.js
+and asynchronous get 
+
+     view main.html  
+     controller main.js
 
 the view is pure html
 
