@@ -15,7 +15,7 @@ Make the directory structure
 
 We can use 
 
-$.package({pkg:"pkg1",comp:"comp1"}); 
+     $.package({pkg:"pkg1",comp:"comp1"}); 
 
 initialize component
 
@@ -31,18 +31,22 @@ and the controller is closure by
 
 style
 
-we can use $(comp).model({}) in the main.js
+we can use 
+
+     $(comp).model({}) 
+
+in the main.js
 
 asynchronous call dynamic server page likes php,jsp,aspx etc.
 
 Model was only process CRUD(create, read, update, delete) action
 
-http://jqcomp.org/
+     http://jqcomp.org/
 
-Wei-TaWang
+Team
 
-Ronnie Chang
-
-David Weng
+     Wei-TaWang
+     Ronnie Chang
+     David Weng
 
 wa114040@gmail.com
