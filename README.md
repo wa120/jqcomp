@@ -7,7 +7,7 @@ Make the directory structure
 
 packages/
 
-└── pkg1/
+└── pkg1/ \n
 │   └─── comp1/
 │   │   ├── main.html
 │   │   ├── main.js
