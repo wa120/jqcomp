@@ -1,7 +1,6 @@
 jQuery.component
 =================
 
-New javascript MVC
 
 Make the directory structure
 
