@@ -23,14 +23,16 @@ and element
 
 initialize component
 
-and asynchronous get 
+and asynchronous get page
 
      view        main.html  
      controller  main.js
 
 the view is pure html
 
-and the controller is closure by
+and controller is js file 
+
+controller designed closure by
 
      (function(comp){
           
@@ -38,7 +40,6 @@ and the controller is closure by
           
      })($.package.CurrentComp);
 
-style
 
 we can use 
 
