@@ -1,4 +1,4 @@
-jquery-component
+jQuery.component
 =================
 
 New javascript MVC
