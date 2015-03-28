@@ -29,7 +29,9 @@ the view is pure html
 and the controller is closure by
 
      (function(comp){
+          
           ...
+          
      })($.package.CurrentComp);
 
 style
@@ -38,7 +40,7 @@ we can use
 
      $(comp).model({}) 
 
-in the main.js
+in the contrller (main.js)
 
 asynchronous call dynamic server page likes php,jsp,aspx etc.
 
