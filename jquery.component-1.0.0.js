@@ -116,6 +116,7 @@ THE SOFTWARE.
       alert("view has'nt action");
       return;
     }
+    $(this).empty();
     options.view=options.action;
     loadingView(options,funcs);
   }
