@@ -26,12 +26,16 @@ THE SOFTWARE.
   //View >> Model >> Controller
 
   var DefaultPath="/packages";
+  var Driver="main";
+  var ViewExt="html";
 
   $.packages=function(options,funcs)
   {
     if(typeof options=='undefined') options={};
 	if(typeof funcs=='undefined') funcs={};
-	
+	if(typeof options.comps=='undefined') options.comps=[];
+    if(typeof options.comp!='undefined')options.comps.push(options.comp);
+    
 	var pkgNode;
 	var thisComp;
 	if(typeof $.package[options.pkg]=='undefined')
@@ -53,7 +57,7 @@ THE SOFTWARE.
     	  }
       });
       if(is_find==false)
-        alert("component does'nt find "+options.comp);
+        alert("Element doesn't find \npkg: "+options.pkg+"."+options.comp);
       $.package[options.pkg][options.comp]=thisComp;
       return thisComp;
 	}
@@ -67,7 +71,21 @@ THE SOFTWARE.
     
   };
   $.package={_ViewMap:[],_ControllerMap:[],_ModelMap:[]};
+  
+  $.fn.package=function(options,funcs){};
 
+  $.components=function(options,funcs){
+
+  	if(typeof options=='undefined') options={};
+	if(typeof funcs=='undefined') funcs={};
+
+	if(typeof options.binding!='undefined' && typeof options.comps!='undefined')
+	{
+		$.component[options.binding]=options.comps;
+	}
+  };
+  $.component={};
+  
   $.fn.component=function(options,funcs)
   {
     var node=comp_init(options,funcs,$(this));
@@ -75,7 +93,7 @@ THE SOFTWARE.
     if(typeof options.model=='undefined')
     {	
 	  if(typeof options.view =='undefined')       options.view=node.attr("view");
-	  if(typeof options.view =='undefined')       options.view="main.html";
+	  if(typeof options.view =='undefined')       options.view=Driver+"."+ViewExt;
 	  if(typeof options.controller =='undefined') options.controller=node.attr("controller");
 	  options.model=node.attr("model");	  	  
 	}
@@ -101,7 +119,7 @@ THE SOFTWARE.
  
     if(typeof options.action=='undefined') 
     {
-      alert("model has'nt action");
+      alert("model hasn't action");
       return;
     }
     options.model=options.action;
@@ -113,7 +131,7 @@ THE SOFTWARE.
 
     if(typeof options.action=='undefined') 
     {
-      alert("view has'nt action");
+      alert("view hasn't action");
       return;
     }
     $(this).empty();
@@ -126,7 +144,7 @@ THE SOFTWARE.
 
     if(typeof options.action=='undefined') 
     {
-      alert("controller has'nt action");
+      alert("controller hasn't action");
       return;
     }
     options.controller=options.action;
@@ -143,7 +161,7 @@ THE SOFTWARE.
     return node;
 
   }
-  $.component=_init;
+
   
   function _init(options,funcs)
   {
@@ -190,6 +208,8 @@ THE SOFTWARE.
 	    alert("View "+thrownError+".\npkg: "+options.pkg+"."+options.comp);
 	  },
 	  success:function(data){
+	  	console.log(this); 
+	  	
 	    var node=$(data);
 		var _inner_view=options.view.substring(options.view.lastIndexOf("/")+1,options.view.lastIndexOf("."));
     
@@ -271,7 +291,6 @@ THE SOFTWARE.
 		success:function(data,textStatus,jqXHR){
 		  console.log(this); 
 		  
-		  options.jsonData=data;
 		  options.data=data;
 		  options.textStatus=textStatus;
 		  options.jqXHR=jqXHR;
