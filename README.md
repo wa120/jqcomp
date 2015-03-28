@@ -17,6 +17,10 @@ We can use
 
      $.package({pkg:"pkg1",comp:"comp1"}); 
 
+and element
+
+     <div id="pkg1" comp="comp1"></div>
+
 initialize component
 
 and asynchronous get 
