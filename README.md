@@ -32,7 +32,7 @@ the view is pure html
 
 and controller is js file 
 
-controller designed closure by
+controller is designed to closure by
 
      (function(comp){
           
@@ -45,7 +45,7 @@ we can use
 
      $(comp).model({}) 
 
-in the contrller (main.js)
+in the controller (main.js)
 
 asynchronous call dynamic server page likes php,jsp,aspx etc.
 
