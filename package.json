@@ -1,0 +1,22 @@
+{
+  "name": "jQuery.component",
+  "version": "1.0.0",
+  "description": "A new javascript MVC framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wa120/jQuery.component"
+  },
+  "keywords": [
+    "jquery-plugin","ecosystem:jquery"
+  ],
+  "author": "Wei Ta Wang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wa120/jQuery.component/issues"
+  },
+  "homepage": "http://jqcomp.org"
+}
