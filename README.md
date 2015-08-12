@@ -22,10 +22,10 @@ and element
 
 to initialize component and catch the view(main.html), controller(main.js) and model (xxx.xxx) by asynchronous
 
-jquery MVC
+Single Page MVC
 =================
 
-This works is clinet-side MVC architecture and Modularized Javascript by asynchronous
+This works is clinet-side MVC architecture and modularized javascript by asynchronous
 
 View wirtes width HTML DOM and can use anything server page language create.
 
