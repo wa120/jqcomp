@@ -20,7 +20,7 @@ and element
 
      <div id="pkg1" comp="comp1"></div>
 
-to initialize component and catch the view(main.html), controller(main.js) and model (xxx.xxx) by asynchronous
+to new the component and catch the view(main.html), controller(main.js) and model (xxx.xxx) by asynchronous
 
 Single Page MVC
 =================
