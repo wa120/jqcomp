@@ -27,7 +27,7 @@ About MVC
 
 View wirtes width HTML DOM and can use anything server page language create.
 
-Controller writes width closure method in js file and loads by asynchronous
+Controller writes width closure in js file and loads by asynchronous
 
      (function(comp){
           
