@@ -2,7 +2,7 @@ jQuery.component
 =================
 
 
-To make this architecture by directory 
+To make directory by this architecture 
 
      packages/
      └── pkg1/
