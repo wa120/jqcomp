@@ -88,7 +88,13 @@ THE SOFTWARE.
   
   $.fn.component=function(options,funcs)
   {
-    var node=comp_init(options,funcs,$(this));
+  	var node=$(this);
+    if(typeof options=='undefined') options={};
+	if(typeof funcs=='undefined') funcs={};
+	
+    options._this=node;
+	if(typeof options.pkg=='undefined') options.pkg=node.attr("id");
+	if(typeof options.comp=='undefined') options.comp=node.attr("comp");
   
     if(typeof options.model=='undefined')
     {	
@@ -115,32 +121,56 @@ THE SOFTWARE.
   };
   $.fn.model=function(options,funcs)
   {
-    var node=comp_init(options,funcs,$(this));
+  	var node=$(this);
+    if(typeof options=='undefined') options={};
+	if(typeof funcs=='undefined') funcs={};
+	
+    options._this=node;
+	if(typeof options.pkg=='undefined') options.pkg=node.attr("id");
+	if(typeof options.comp=='undefined') options.comp=node.attr("comp");
  
     if(typeof options.action=='undefined') 
     {
       alert("model hasn't action");
       return;
     }
+    options.async=true;    
+    if(typeof funcs.success=='undefined')
+    {
+    	options.async=false;
+    }
     options.model=options.action;
-    loadingModel(options,funcs);
+    return loadingModel(options,funcs);
   }
   $.fn.view=function(options,funcs)
   {
-    var node=comp_init(options,funcs,$(this));
+  	var node=$(this);
+    if(typeof options=='undefined') options={};
+	if(typeof funcs=='undefined') funcs={};
+	
+    options._this=node;
+	if(typeof options.pkg=='undefined') options.pkg=node.attr("id");
+	if(typeof options.comp=='undefined') options.comp=node.attr("comp");
 
     if(typeof options.action=='undefined') 
     {
       alert("view hasn't action");
       return;
     }
-    $(this).empty();
+    node.empty();
     options.view=options.action;
     loadingView(options,funcs);
+    return node;
   }
   $.fn.controller=function(options,funcs)
   {
-    var node=comp_init(options,funcs,$(this));
+  	var node=$(this);
+    if(typeof options=='undefined') options={};
+	if(typeof funcs=='undefined') funcs={};
+	
+    options._this=node;
+	if(typeof options.pkg=='undefined') options.pkg=node.attr("id");
+	if(typeof options.comp=='undefined') options.comp=node.attr("comp");
 
     if(typeof options.action=='undefined') 
     {
@@ -149,19 +179,8 @@ THE SOFTWARE.
     }
     options.controller=options.action;
     loadingController(options,funcs);
-  }
-  function comp_init(options,funcs,node)
-  {    
-    if(typeof options=='undefined') options={};
-	if(typeof funcs=='undefined') funcs={};
-	
-    options._this=node;
-	if(typeof options.pkg=='undefined') options.pkg=node.attr("id");
-	if(typeof options.comp=='undefined') options.comp=node.attr("comp");
     return node;
-
   }
-
   
   function _init(options,funcs)
   {
@@ -278,7 +297,7 @@ THE SOFTWARE.
     var _loadingController=funcs.loadingController;
     var url=options.pkg+"/"+options.comp+"/"+options.model;  
 	$.ajax({
-	    async:true,
+	    async:options.async,
 		url:DefaultPath+"/"+url,
 		type:options.method,
 		cache:false,
@@ -288,19 +307,20 @@ THE SOFTWARE.
 		  console.log(this); 	
 		  alert("Model "+options.model+" "+thrownError+".\npkg: "+options.pkg+"."+options.comp);
 		},
-		success:function(data,textStatus,jqXHR){
-		  console.log(this); 
-		  
-		  options.data=data;
+		success:function(result,textStatus,jqXHR){
+		  console.log(this);
+		   
+		  options.result=result;
 		  options.textStatus=textStatus;
 		  options.jqXHR=jqXHR;
-
 		  options._this._success=funcs.success;
-		  options._this._success(options,funcs);
+
 		  $.package._ModelMap[url]=true;
+		  (typeof options._this._success=='function')?options._this._success(options,funcs):null;
 		  (typeof _loadingController=='function')?_loadingController(options,funcs):null;
 		}
 	  });
+	  return options.result;
   }
 
  })(jQuery);
