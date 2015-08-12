@@ -2,7 +2,7 @@ jQuery.component
 =================
 
 
-Make the directory structure
+To make the directory architecture
 
      packages/
      └── pkg1/
@@ -20,18 +20,14 @@ and element
 
      <div id="pkg1" comp="comp1"></div>
 
-initialize component
+to initialize package of components
 
-and asynchronous get page
+and asynchronous catch the view and controller
 
      view        main.html  
      controller  main.js
 
-the view is pure html
-
-and controller is js file 
-
-controller is designed to closure by
+this controller is js file and designed to closure by
 
      (function(comp){
           
@@ -40,15 +36,15 @@ controller is designed to closure by
      })($.package.CurrentComp);
 
 
-we can use 
+We can create model  
 
      $(comp).model({}) 
 
 in the controller (main.js)
 
-asynchronous call dynamic server page likes php,jsp,aspx etc.
+then call dynamic server page (php,jsp,aspx,nodejs etc) by asynchronous
 
-Model was only process CRUD(create, read, update, delete) action
+Model pages were only processd CRUD(create, read, update, delete) action in jqcomp
 
 --
 
