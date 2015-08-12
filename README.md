@@ -22,7 +22,7 @@ and element
 
 to initialize component and catch the view(main.html), controller(main.js) and model (xxx.xxx) by asynchronous
 
-About MVC
+jquery MVC
 =================
 
 View wirtes width HTML DOM and can use anything server page language create.
