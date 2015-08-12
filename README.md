@@ -20,14 +20,11 @@ and element
 
      <div id="pkg1" comp="comp1"></div>
 
-to initialize components
+to initialize component and catch the view(main.html), controller(main.js) and model (xxx.xxx) by asynchronous
 
-and catch the view and controller by asynchronous
+View wirtes width HTML DOM and can use anything server page language create.
 
-     view        main.html  
-     controller  main.js
-
-this controller is js file and designed to closure in main.js
+Controller writes width closure method in js file and loads by asynchronous
 
      (function(comp){
           
@@ -36,15 +33,13 @@ this controller is js file and designed to closure in main.js
      })($.package.CurrentComp);
 
 
-We can create model  
+We can use 
 
      $(comp).model({}) 
 
-in the controller (main.js)
+in the controller to call dynamic server page (php,jsp,aspx,nodejs etc) works anything (likes sql command) by asynchronous
 
-then call dynamic server page (php,jsp,aspx,nodejs etc) by asynchronous
-
-Model pages were only processd CRUD(create, read, update, delete) action in jqcomp
+Model pages were processd CRUD(create, read, update, delete) in jqcomp
 
 --
 
