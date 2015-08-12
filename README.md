@@ -25,6 +25,8 @@ to initialize component and catch the view(main.html), controller(main.js) and m
 jquery MVC
 =================
 
+This works is clinet-side MVC architecture and Modularized Javascript by asynchronous
+
 View wirtes width HTML DOM and can use anything server page language create.
 
 Controller writes width closure in js file and loads by asynchronous
