@@ -27,7 +27,7 @@ and catch the view and controller by asynchronous
      view        main.html  
      controller  main.js
 
-this controller is js file and designed to closure by
+this controller is js file and designed to closure in main.js
 
      (function(comp){
           
