@@ -22,7 +22,7 @@ and element
 
 to new the component and catch the view(main.html), controller(main.js) and model (xxx.xxx) by asynchronous
 
-Single Page MVC
+Single Page
 =================
 
 This works is clinet-side MVC architecture and modularized javascript by asynchronous
