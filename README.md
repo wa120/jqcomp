@@ -40,6 +40,8 @@ Controller writes width closure in js file and loads by asynchronous
           
           $(comp).find("cc").click(function(){
                alert("aa");
+               var result=$(comp).model({action:"xxx.php",data:"aa=bb&cc=dd"});
+               $(this).append(result);
           });
           ...
           
