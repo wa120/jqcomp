@@ -29,10 +29,18 @@ This works is clinet-side MVC architecture and Modularized Javascript by asynchr
 
 View wirtes width HTML DOM and can use anything server page language create.
 
+     <div>
+          <span id="cc">dd</span>
+          ....
+     <div>
+
 Controller writes width closure in js file and loads by asynchronous
 
      (function(comp){
           
+          $(comp).find("cc").click(function(){
+               alert("aa");
+          });
           ...
           
      })($.package.CurrentComp);
@@ -40,7 +48,7 @@ Controller writes width closure in js file and loads by asynchronous
 
 We can use 
 
-     $(comp).model({}) 
+     $(comp).model({action:"xxx.php",data:"aa=bb&cc=dd"}); 
 
 in the controller to call dynamic server page (php,jsp,aspx,nodejs etc) works anything (likes sql command) by asynchronous
 
