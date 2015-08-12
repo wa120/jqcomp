@@ -12,7 +12,7 @@ To make this architecture by directory
      │    |   ├── model1.php
      │    |   └── ...
 
-We can use 
+We can use
 
      $.package({pkg:"pkg1",comp:"comp1"}); 
 
