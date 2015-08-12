@@ -22,7 +22,7 @@ and element
 
 to initialize package of components
 
-and asynchronous catch the view and controller
+and catch the view and controller by asynchronous
 
      view        main.html  
      controller  main.js
