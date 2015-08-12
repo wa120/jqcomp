@@ -20,7 +20,7 @@ and element
 
      <div id="pkg1" comp="comp1"></div>
 
-to initialize package of components
+to initialize components
 
 and catch the view and controller by asynchronous
 
