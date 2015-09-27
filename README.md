@@ -60,10 +60,8 @@ Model pages were processd CRUD(create, read, update, delete) in jqcomp
 
 http://jqcomp.org/
 
-Team
+Contributor
 
      Wei-TaWang
-     Ronnie Chang
-     David Weng
 
 wa114040@gmail.com
