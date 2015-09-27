@@ -62,6 +62,6 @@ http://jqcomp.org/
 
 Contributor
 
-     Wei-TaWang
+     Wei-Ta Wang
 
 wa114040@gmail.com
