@@ -1,0 +1,5 @@
+(function(comp){
+
+
+   
+})($.package.CurrentComp);
