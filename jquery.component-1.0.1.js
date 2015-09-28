@@ -25,7 +25,7 @@ THE SOFTWARE.
   //ajax loading seqence
   //View >> Model >> Controller
 
-  var DefaultPath="/packages";
+  var DefaultPath="packages";
   var Driver="main";
   var ViewExt="html";
 
