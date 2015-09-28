@@ -1,3 +1,0 @@
- (function(comp){
-
-  })($.package.CurrentComp);
