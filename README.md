@@ -27,7 +27,7 @@ Single Page
 
 This works is clinet-side MVC architecture and modularized javascript by asynchronous
 
-View wirtes width HTML DOM and can use anything server page language create.
+View wirtes width HTML DOM and can use anything server page language.
 
      <div>
           <span id="cc">dd</span>
