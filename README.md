@@ -40,7 +40,7 @@ Controller writes width closure in js file and loads by asynchronous
           
           $(comp).find("cc").click(function(){
                alert("aa");
-               var result=$(comp).model({action:"xxx.php",data:"aa=bb&cc=dd"});
+               var result=$(comp).model({action:"xxx.php",data:"aa=bb&cc=dd",method:"POST"});
                $(this).append(result);
           });
           ...
@@ -50,7 +50,7 @@ Controller writes width closure in js file and loads by asynchronous
 
 We can use 
 
-     $(comp).model({action:"xxx.php",data:"aa=bb&cc=dd"}); 
+     $(comp).model({action:"xxx.php",data:"aa=bb&cc=dd",method:"POST"}); 
 
 in the controller to call dynamic server page (php,jsp,aspx,nodejs etc) works anything (likes sql command) by asynchronous
 
