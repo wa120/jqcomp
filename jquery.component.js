@@ -31,10 +31,9 @@ THE SOFTWARE.
 
   $.packages=function(options,funcs)
   {
-    if(typeof options=='undefined') options={};
+        if(typeof options=='undefined') options={};
 	if(typeof funcs=='undefined') funcs={};
 	
-    
 	var pkgNode;
 	var thisComp;
 	if(typeof $.package[options.pkg]=='undefined') $.package[options.pkg]={};		
@@ -42,22 +41,22 @@ THE SOFTWARE.
 	if(typeof $.package[options.pkg][options.comp]=='undefined')
 	{
 		
-		$.package.CurrentPkg=$("[id="+options.pkg+"]");
-		var is_find=false;
-		$.package["CurrentPkg"].each(function(){
+	  $.package.CurrentPkg=$("[id="+options.pkg+"]");
+	  var is_find=false;
+	  $.package["CurrentPkg"].each(function(){
 
-    	  if($(this).attr("comp")==options.comp)
-    	  {
+    	    if($(this).attr("comp")==options.comp)
+    	    {
     		$(this).component(options,funcs);       		  
     		is_find=true;
     		thisComp=$(this);
     		return ;
-    	  }
+    	    }
     	 
-      });
-      if(is_find==false)
-        alert("Element doesn't find \npkg: "+options.pkg+"."+options.comp);
-      $.package[options.pkg][options.comp]=thisComp;
+          });
+          if(is_find==false)
+            alert("Element doesn't find \npkg: "+options.pkg+"."+options.comp);
+          $.package[options.pkg][options.comp]=thisComp;
 	}
 	else	
 	{
@@ -70,7 +69,7 @@ THE SOFTWARE.
 	{
 		if(typeof $.component[options.binding] =='undefined') $.component[options.binding]=[];
 		
-		if(typeof $.package._BindingMap[options.binding+"."+options.pkg+options.comp]=='undefined')
+		if(typeof $.package._BindingMap[options.binding+"."+options.pkg+"."+options.comp]=='undefined')
 		{		  
 		  $.component[options.binding].push(thisComp);
 		  $.package._BindingMap[options.binding+"."+options.pkg+"."+options.comp]=true;
