@@ -33,8 +33,7 @@ THE SOFTWARE.
   {
     if(typeof options=='undefined') options={};
 	if(typeof funcs=='undefined') funcs={};
-	if(typeof options.comps=='undefined') options.comps=[];
-    if(typeof options.comp!='undefined')options.comps.push(options.comp);
+	
     
 	var pkgNode;
 	var thisComp;
@@ -59,21 +58,28 @@ THE SOFTWARE.
       if(is_find==false)
         alert("Element doesn't find \npkg: "+options.pkg+"."+options.comp);
       $.package[options.pkg][options.comp]=thisComp;
-      return thisComp;
 	}
 	else	
 	{
 	  	
 	  thisComp=$.package[options.pkg][options.comp];
 	  if(typeof options.param!='undefined')
-	    thisComp.component(options,funcs);
-	  
-	  return thisComp;
+	    thisComp.component(options,funcs);	  
 	}
-	
+	if(typeof options.binding!='undefined')
+	{
+		if(typeof $.component[options.binding] =='undefined') $.component[options.binding]=[];
+		
+		if(typeof $.package._BindingMap[options.binding+"."+options.pkg+options.comp]=='undefined')
+		{		  
+		  $.component[options.binding].push(thisComp);
+		  $.package._BindingMap[options.binding+"."+options.pkg+"."+options.comp]=true;
+		}
+	}
+	return thisComp;
     
   };
-  $.package={_ViewMap:[],_ControllerMap:[],_ModelMap:[]};
+  $.package={_ViewMap:[],_ControllerMap:[],_ModelMap:[],_BindingMap:[]};
   
   $.fn.package=function(options,funcs){};
 
@@ -112,6 +118,8 @@ THE SOFTWARE.
 
 	if(typeof options.method =='undefined')   options.method=node.attr("method");
     if(typeof options.datatype =='undefined')   options.datatype="json";
+	//if(typeof options.param =='undefined')   options.param={};
+
 	if(typeof options.data =='undefined')     options.data=node.attr("data");
 	
 	if(typeof options.cache =='undefined'&& typeof node.attr("cache")!='undefined')
@@ -231,7 +239,8 @@ THE SOFTWARE.
 	  success:function(data){
 	  	console.log(this); 
 	  	
-	    var node=$(data);			
+	    var node=$(data);
+	    
 	     (options.viewtype!="prepend")?node.appendTo(options._this):node.prependTo(options._this);
 
 		 $.package._ViewMap[url]=true;
