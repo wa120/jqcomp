@@ -22,8 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 *****/
 (function($){
-  //ajax loading seqence
-  //View >> Model >> Controller
 
   var DefaultPath="packages";
   var Driver="main";
